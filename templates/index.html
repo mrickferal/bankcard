@@ -3,10 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Bank Card</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- Google Fonts's API connexion -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google Fonts: Roboto -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Orbitron -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="wrapper"></div>
+    <div class="wrapper">
+      <div class="card">
+        <h2>Bank Name</h2>
+        <p class="card__number">4211 **** **** 2164</p>
+        <div class="card-footer">
+          <p>John Doe</p>
+          <p>06/2025</p>
+        </div>
+      </div>
+      <div class="wrapper__current-amount">
+        <label for="input-range" class="wrapper__label" id="input-range-label"
+          >$4000</label
+        >
+      </div>
+      <div class="range">
+        <input
+          type="range"
+          id="input-range"
+          name="input-range"
+          min="0"
+          max="8000"
+          value="6000"
+        />
+      </div>
+      <div class="amount">
+        <div class="amount__box" data-amount="2000">
+          <p>$2000</p>
+        </div>
+        <div class="amount__box" data-amount="4000">
+          <p>$4000</p>
+        </div>
+        <div class="amount__box" data-amount="6000">
+          <p>$6000</p>
+        </div>
+        <div class="amount__box" data-amount="8000">
+          <p>$8000</p>
+        </div>
+      </div>
+      <button type="button" class="wrapper__button">Apply</button>
+    </div>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../assets/js/app.js"></script>
+    <script type="text/javascript" src="../assets/js/modules/range.js"></script>
   </body>
 </html>

@@ -15,8 +15,290 @@
 :root {
   --black: #000000;
   --white: #ffffff;
+  --silver: #cccccc;
+  --grey: #808080;
 }
 
 body {
   margin: 0;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-align: left;
+  background-color: var(--silver);
+  color: var(--white);
+}
+
+.blur {
+  filter: blur(3px);
+  opacity: 0.5;
+}
+
+/* ============================================================ */
+/* ============== MOBILE WITH SMALL SCREEN SIZE =============== */
+/* ============================================================ */
+@media screen and (min-width: 320px) {
+  .wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 80%;
+    height: 10em;
+    margin: 4em auto 1em;
+    padding: 1.5em;
+    border-radius: 1em;
+    background: linear-gradient(
+      90deg,
+      rgba(196, 59, 235, 1) 0%,
+      rgba(219, 84, 160, 1) 49%,
+      rgba(241, 109, 103, 1) 100%
+    );
+    cursor: pointer;
+  }
+
+  .card h2 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .card p {
+    font-size: 0.8em;
+  }
+
+  .card__number {
+    font-family: "Orbitron", sans-serif;
+    margin: 2em 0 0 0;
+  }
+
+  .card-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5em;
+    padding: 0.25em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    background: linear-gradient(
+      75deg,
+      rgba(191, 138, 226, 1) 0%,
+      rgba(233, 170, 64, 1) 100%
+    );
+  }
+
+  .card-footer p {
+    margin: 0 1em 0 1em;
+  }
+
+  .card-footer :nth-child(2) {
+    font-family: "Orbitron", sans-serif;
+  }
+
+  .wrapper__current-amount {
+    margin: 1em 0 0 0;
+  }
+
+  .wrapper__label {
+    color: var(--black);
+    font-size: 1em;
+  }
+
+  .range {
+    display: flex;
+    justify-content: center;
+    margin: 0.5em 0 0.5em 0;
+  }
+
+  .range input {
+    width: 100%;
+    height: 0.8em;
+    border-radius: 1em;
+    appearance: none;
+    outline: none;
+    background: linear-gradient(
+      90deg,
+      rgba(117, 20, 241, 1) 0%,
+      rgba(175, 26, 170, 1) 12%,
+      rgba(233, 61, 90, 1) 19%,
+      rgba(62, 48, 56, 1) 19%
+    );
+  }
+
+  .range input::-webkit-slider-thumb {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1em;
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    background: rgba(117, 20, 241, 1);
+    box-shadow: 0 0 10px 0 rgba(117, 20, 241, 1);
+  }
+
+  .amount {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 1em 0 0 0;
+  }
+
+  .amount__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    border-radius: 20%;
+    background-color: var(--black);
+    color: var(--grey);
+    width: 3.5em;
+    height: 3.5em;
+    margin: 0.5em;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .amount__box p {
+    font-size: 1em;
+  }
+
+  .amount__box:hover {
+    transform: translateY(-25%);
+  }
+
+  .amount__box.active {
+    background: linear-gradient(
+      90deg,
+      rgba(196, 59, 235, 1) 0%,
+      rgba(219, 84, 160, 1) 49%,
+      rgba(241, 109, 103, 1) 100%
+    );
+    color: var(--white);
+  }
+
+  .wrapper__button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 80%;
+    height: 3em;
+    border-radius: 1em;
+    margin: 1em 0 0 0;
+    background: linear-gradient(
+      90deg,
+      rgba(196, 59, 235, 1) 0%,
+      rgba(219, 84, 160, 1) 49%,
+      rgba(241, 109, 103, 1) 100%
+    );
+    color: var(--white);
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+/* ============================================================ */
+/* ============== MOBILE WITH MEDIUM SCREEN SIZE ============== */
+/* ============================================================ */
+@media screen and (min-width: 390px) {
+  .card {
+    height: 12em;
+  }
+
+  .card h2 {
+    font-size: 1.2em;
+  }
+
+  .card p {
+    font-size: 1em;
+  }
+
+  .wrapper__label {
+    font-size: 1.2em;
+  }
+
+  .amount__box {
+    width: 4em;
+    height: 4em;
+  }
+
+  .amount__box p {
+    font-size: 1.2em;
+  }
+
+  .wrapper__button {
+    font-size: 1em;
+  }
+}
+
+/* ============================================================ */
+/* =============== MOBILE WITH LARGE SCREEN SIZE ============== */
+/* ============================================================ */
+@media screen and (min-width: 428px) {
+}
+
+/* ============================================================ */
+/* ========================== TABLET ========================== */
+/* ============================================================ */
+@media screen and (min-width: 768px) {
+  .card {
+    height: 20em;
+  }
+
+  .card h2 {
+    font-size: 1.4em;
+  }
+
+  .card p {
+    font-size: 1.2em;
+  }
+
+  .wrapper__label {
+    font-size: 1.4em;
+  }
+
+  .amount__box {
+    width: 6em;
+    height: 6em;
+  }
+
+  .amount__box p {
+    font-size: 1.4em;
+  }
+
+  .wrapper__button {
+    font-size: 1.2em;
+  }
+}
+
+/* ============================================================ */
+/* ========================== DESKTOP ========================= */
+/* ============================================================ */
+@media screen and (min-width: 992px) {
+  .card {
+    width: 25%;
+    height: 16em;
+  }
+
+  .amount {
+    width: 25%;
+  }
+
+  .wrapper__button {
+    width: 25%;
+  }
 }
